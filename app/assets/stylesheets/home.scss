@@ -1,0 +1,53 @@
+/* home ================================ */
+.top-main {
+  padding-top: 200px;
+  padding-bottom:350px;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.top-main:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.top-message {
+  position: relative;
+}
+
+.top-main h2 {
+  font-size: 3em;
+}
+
+/* about ================================ */
+.about-main {
+  padding: 0 50px 100px;
+  position: relative;
+  color: white;
+}
+
+.about-main:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.about-main h2,
+.about-main p {
+  position: relative;
+}
+
+.about-main h2 {
+  margin: 0;
+  padding-top: 50px;
+}
