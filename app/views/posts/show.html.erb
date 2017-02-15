@@ -2,5 +2,9 @@
   <div class="posts-show-item">
     <p><%= @post.content %><p>
     <div class="post-time"><%= @post.created_at %></div>
+    <a href="/posts/<%= @post.id %>/edit">編集</a>
+    <%= form_tag "/posts/#{@post.id}/destroy" do %>
+      <input type="submit" value="削除">
+    <% end %>
   </div>
 </div>
