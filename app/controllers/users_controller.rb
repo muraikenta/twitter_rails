@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:edit_profile, :update_profile, :edit_password, :update_password]
+  before_action :authenticate_user, only: [:edit, :update, :edit_password, :update_password]
   before_action :forbid_login_user, only: [:new, :create, :login_form, :login]
-  
+  before_action :ensure_correct_user, only: [:edit, :update, :edit_password, :update_password]
+
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -11,7 +12,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name: params[:title], email: params[:email], password: BCrypt::Password.create(params[:password]))
+    @user = User.new(
+      name: params[:title],
+      email: params[:email],
+      password: BCrypt::Password.create(params[:password]),
+      image: '/images/default_user.jpg'
+    )
+
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = 'ユーザー登録が完了しました'
@@ -21,17 +28,25 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit_profile
+  def edit
   end
 
-  def update_profile
-    @current_user.name = params[:name]
-    @current_user.email = params[:email]
-    if @current_user.save
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.name = params[:name]
+    @user.email = params[:email]
+
+    file = params[:image]
+    if file
+      @user.image = "/user_images/#{SecureRandom.urlsafe_base64}.png"
+      File.binwrite("public#{@user.image}", file.read)
+    end
+
+    if @user.save
       flash[:notice] = 'アカウント情報を編集しました'
-      redirect_to "/users/#{@current_user.id}"
+      redirect_to "/users/#{@user.id}"
     else
-      render 'edit_profile'
+      render 'edit'
     end
   end
 
@@ -39,11 +54,12 @@ class UsersController < ApplicationController
   end
 
   def update_password
-    if BCrypt::Password.new(@current_user.password).is_password?(params[:current_password])
-      @current_user.password = BCrypt::Password.create(params[:new_password])
-      @current_user.save
+    @user = User.find_by(id: params[:id])
+    if BCrypt::Password.new(@user.password).is_password?(params[:current_password])
+      @user.password = BCrypt::Password.create(params[:new_password])
+      @user.save
       flash[:notice] = 'パスワードを変更しました'
-      redirect_to "/users/#{@current_user.id}"
+      redirect_to "/users/#{@user.id}"
     else
       @error_message = 'パスワードが違います'
       render 'edit_password'
@@ -72,5 +88,14 @@ class UsersController < ApplicationController
     session.delete(:user_id)
     flash[:notice] = 'ログアウトしました'
     redirect_to '/login'
+  end
+
+  private
+
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = '権限がありません'
+      redirect_to '/posts/index'
+    end
   end
 end
