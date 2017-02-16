@@ -9,6 +9,15 @@
   padding: 15px;
   background-color: white;
   border-bottom: 1px solid #e1e8ed;
+  overflow: hidden;
+}
+
+.post-left img {
+  width: 50px;
+}
+
+.post-user-name {
+  font-weight: bold;
 }
 
 .posts-index-item:last-child {
@@ -17,6 +26,18 @@
 
 .posts-index-item p {
   margin: 0 10px;
+}
+
+.post-left {
+  float: left;
+  width: 10%;
+}
+
+.post-right {
+  float: left;
+  width: 90%;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -35,10 +56,24 @@
 .posts-show-item {
   padding: 30px;
   background-color: white;
+  overflow: hidden;
 }
 
 .posts-show-item p {
   font-size: 1.5em;
+}
+
+.posts-show-item img {
+  width: 60px;
+  vertical-align: middle;
+}
+
+.posts-show-item .post-user-name a {
+  color: #364a4d;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 1.3em;
+  margin-left: 10px;
 }
 
 .posts-show-item .post-time {
