@@ -12,12 +12,13 @@
   </div>
 
   <ul class="user-menus">
-    <li class="active"><a href="/users/<%= @user.id %>">投稿</a></li>
-    <li><a href="/users/<%= @user.id %>/likes">いいね</a></li>
+    <li><a href="/users/<%= @user.id %>">投稿</a></li>
+    <li class="active"><a href="/users/<%= @user.id %>/likes">いいね</a></li>
   </ul>
 
   <div class="posts-index">
-    <% @posts.each do |post| %>
+    <% @likes.each do |like| %>
+      <% post = like.post %>
       <% user = post.user %>
       <div class="posts-index-item">
         <div class="post-left"><img src="<%= user.image %>"></div>

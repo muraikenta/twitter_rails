@@ -29,3 +29,21 @@
 .user img {
   width: 150px;
 }
+
+.user-menus {
+  background-color: white;
+  overflow: hidden;
+}
+
+.user-menus li {
+  float: left;
+}
+
+.user-menus li.active {
+  border-bottom: 4px solid #616566;
+}
+
+.user-menus a {
+  display: inline-block;
+  padding: 10px 20px;
+}

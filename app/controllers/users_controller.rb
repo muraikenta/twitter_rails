@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     @posts = @user.posts
   end
 
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = @user.likes
+  end
+
   def new
     @user = User.new
   end

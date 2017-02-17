@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216073731) do
+ActiveRecord::Schema.define(version: 20170216084104) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"

@@ -90,14 +90,35 @@
   display: inline;
 }
 
-.posts-show input[type="submit"] {
+.like-btn {
   padding: 0;
   background-color: white;
-  border: none;
+  color: #8899a6;
+  font-size: 1em;
+  margin-bottom: 0;
+  outline-width: 0;
+}
+
+.like-btn-unlike {
+  color: #bb428f;
+}
+
+.posts-show-item .fa {
+  margin: 0;
+}
+
+.post-menus {
+  margin-top: 10px;
+}
+
+.post-menus input {
+  padding: 0;
+  background-color: white;
   color: #8899a6;
   text-decoration: underline;
   font-size: 1em;
-  margin-left: 10px;
+  margin-bottom: 0;
+  outline-width: 0;
 }
 
 @media (max-width: 700px) {
