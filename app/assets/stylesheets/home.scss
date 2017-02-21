@@ -36,27 +36,24 @@
 
 /* about ================================ */
 .about-main {
-  padding: 0 50px 100px;
-  position: relative;
+  padding: 180px 8% 0;
   color: white;
 }
 
-.about-main:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.about-main h2,
-.about-main p {
-  position: relative;
-}
-
 .about-main h2 {
-  margin: 0;
-  padding-top: 50px;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.about-main p {
+  font-weight: 200;
+  font-size: 1.25rem;
+}
+
+.about-img {
+  width: 84%;
+  position: absolute;
+  top: 48%;
+  left: 8%;
 }
