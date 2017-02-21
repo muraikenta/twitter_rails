@@ -72,17 +72,15 @@ header {
   text-align: center;
 }
 
-
 /* ボタン ================================ */
 .btn {
-  padding: 10px 26px;
+  line-height: 48px;
   color: white;
   display: inline-block;
-  opacity: 0.8;
-  border-radius: 3px;
-  border: 1px solid transparent;
-  font-size: 16px;
+  border-radius: 2px;
+  font-size: 15px;
   cursor: pointer;
+  width: 300px;
 }
 
 .btn-large {
@@ -90,18 +88,17 @@ header {
   font-size: 18px;
 }
 
-/*　「新規登録」と「編集」ボタン　*/
 .signup-btn {
-  color: #582a12;
-  background-color: white;
-  margin-top:30px;
-  width: 150px;
+  display: block;
+  margin: 40px auto 10px;
+  background-color: #3ecdc6;
 }
 
 .login-btn {
-  color: #582a12;
+  display: block;
+  margin: 0 auto;
+  color: #040405;
   background-color: white;
-  width: 150px;
 }
 
 /* フォーム================================ */
