@@ -1,23 +1,9 @@
 /* 共通レイアウト ================================ */
-* {
-  box-sizing: content-box;
-}
 body {
-  color: #364a4d;
-  background-color: #f5f8fa;
+  color: #040405;
+  background-color: #3ecdc6;
   margin: 0;
   min-height: 1vh;
-}
-
-ul, li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: #292f33;
 }
 
 .container {
@@ -26,34 +12,6 @@ a {
   padding-left: 15px;
   padding-right: 15px;
   clear: both;
-}
-
-.heading {
-  display: inline-block;
-}
-
-.fa {
-  margin-right: 7px;
-}
-
-/* フォント
-================================ */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 2em;
-  letter-spacing: -2px;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-}
-
-p {
-  line-height: 1.7em;
 }
 
 /* ヘッダー ================================ */
