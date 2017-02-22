@@ -8,6 +8,7 @@
   color: white;
   background: image-url("top2.jpg") no-repeat center 50%;
   background-size: cover;
+  -webkit-font-smoothing: antialiased;
 }
 
 .top-main:before {
@@ -25,7 +26,7 @@
 }
 
 .top-main h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 500;
   line-height: 1.4;
 }
