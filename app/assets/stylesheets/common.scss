@@ -25,9 +25,8 @@ main {
 /* ヘッダー ================================ */
 header {
   height: 64px;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  z-index: 10;
 }
 
 .header-logo {
@@ -49,11 +48,14 @@ header {
 }
 
 .header-menus a {
-  padding-right: 30px;
+  padding: 22px 15px 20px;
   float: left;
   font-size: 13px;
   color: white;
-  line-height: 64px;
+}
+
+.header-menus .fa {
+  padding-right: 5px;
 }
 
 .header-menus input[type="submit"] {
@@ -62,7 +64,7 @@ header {
   line-height: 64px;
   color: white;
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 /* フラッシュ ================================ */
@@ -101,6 +103,17 @@ header {
   margin: 0 auto;
   color: #2b2b2d;
   background-color: white;
+}
+
+.post-btn {
+  background-color: #10afaf;
+  padding: 14px 20px !important;
+  line-height: 0;
+  margin-top: 12px;
+  border-radius: 2px;
+  margin: 12px 10px;
+  width: 120px;
+  text-align: center;
 }
 
 /* フォーム================================ */
