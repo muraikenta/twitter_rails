@@ -29,3 +29,8 @@ input {
   background-color: transparent;
   outline-width: 0;
 }
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
