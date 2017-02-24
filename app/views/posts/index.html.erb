@@ -3,7 +3,9 @@
     <% @posts.each do |post| %>
       <% user = post.user %>
       <div class="posts-index-item">
-        <div class="post-left"><img src="<%= user.image %>"></div>
+        <div class="post-left">
+          <img src="<%= user.image %>">
+        </div>
         <div class="post-right">
           <div class="post-user-name">
             <a href="/users/<%= user.id %>">
@@ -17,5 +19,4 @@
       </div>
     <% end %>
   </div>
-  
 </main>
