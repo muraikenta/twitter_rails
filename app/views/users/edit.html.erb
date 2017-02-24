@@ -1,22 +1,25 @@
-<div class="users-edit">
-  <div class="form users-form">
-    <div class="form-header">アカウント編集</div>
-    <div class="form-body">
-      <% @current_user.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
+<main class="users-edit">
+  <div class="container">
+    <div class="form-heading">アカウント編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @current_user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
 
-      <%= form_tag "/users/#{@current_user.id}/update", multipart: true do %>
-        <h2>名前</h2>
-        <input name="name" value="<%= @current_user.name %>">
-        <h2>画像</h2>
-        <input name="image" type="file">
-        <h2>メールアドレス</h2>
-        <input name="email" value="<%= @current_user.email %>">
-        <input type="submit" value="保存">
-      <% end %>
+        <%= form_tag "/users/#{@current_user.id}/update", multipart: true do %>
+          <p>名前</p>
+          <input name="name" value="<%= @current_user.name %>">
+          <p>画像</p>
+          <input name="image" type="file">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @current_user.email %>">
+          <input type="submit" value="保存">
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+
+</main>
