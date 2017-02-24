@@ -16,9 +16,21 @@ ul, li {
 
 a {
   text-decoration: none;
-  color: #040405;
+  color: #2d3133;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+}
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
 }

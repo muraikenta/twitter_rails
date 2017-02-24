@@ -1,18 +1,22 @@
-<div class="posts-index">
-  <% @posts.each do |post| %>
-    <% user = post.user %>
-    <div class="posts-index-item">
-      <div class="post-left"><img src="<%= user.image %>"></div>
-      <div class="post-right">
-        <div class="post-user-name">
-          <a href="/users/<%= user.id %>">
-            <%= user.name %>
+<main class="posts-index">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <% user = post.user %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= user.image %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <a href="/users/<%= user.id %>">
+              <%= user.name %>
+            </a>
+          </div>
+          <a href="/posts/<%= post.id %>">
+            <%= post.content %>
           </a>
         </div>
-        <a href="/posts/<%= post.id %>">
-          <%= post.content %>
-        </a>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+</main>

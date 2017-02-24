@@ -1,22 +1,21 @@
-<div class="user-show">
-  <div class="user">
-    <h2>ユーザー名</h2>
-    <p><%= @user.name %></p>
-    <img src="<%= @user.image %>">
-    <h2>メールアドレス</h2>
-    <p><%= @user.email %></p>
-    <% if @user.id == @current_user.id %>
-      <a href="/users/<%= @current_user.id %>/edit">プロフィールの編集</a>
-      <a href="/users/<%= @current_user.id %>/edit_password">パスワードの変更</a>
-    <% end %>
-  </div>
+<main class="user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= @user.image %>">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+      <% if @user.id == @current_user.id %>
+        <a href="/users/<%= @current_user.id %>/edit">プロフィールの編集 </a>
+        <span>|</span>
+        <a href="/users/<%= @current_user.id %>/edit_password">パスワードの変更</a>
+      <% end %>
+    </div>
 
-  <ul class="user-menus">
-    <li><a href="/users/<%= @user.id %>">投稿</a></li>
-    <li class="active"><a href="/users/<%= @user.id %>/likes">いいね</a></li>
-  </ul>
+    <ul class="user-tabs">
+      <li><a href="/users/<%= @user.id %>">投稿</a></li>
+      <li class="active"><a href="/users/<%= @user.id %>/likes">いいね！</a></li>
+    </ul>
 
-  <div class="posts-index">
     <% @likes.each do |like| %>
       <% post = like.post %>
       <% user = post.user %>
@@ -36,4 +35,4 @@
     <% end %>
   </div>
 
-</div>
+</main>

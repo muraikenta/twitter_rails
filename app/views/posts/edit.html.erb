@@ -1,17 +1,19 @@
-<div class="foods-new">
-  <div class="form foods-form">
-    <div class="form-header">編集する</div>
-    <div class="form-body">
-      <% @post.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
+<main class="posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <div class="form">
+      <div class="form-body">
+        <% @post.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
 
-      <%= form_tag "/posts/#{@post.id}/update" do %>
-        <textarea name="content"><%= @post.content %></textarea>
-        <input type="submit" value="保存">
-      <% end %>
+        <%= form_tag "/posts/#{@post.id}/update" do %>
+          <textarea name="content" autofocus><%= @post.content %></textarea>
+          <input type="submit" value="保存">
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+</main>
