@@ -5,7 +5,7 @@
 html {
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
   line-height: 1.7;
-  letter-spacing: 0.04rem;
+  letter-spacing: 1px;
 }
 
 ul, li {

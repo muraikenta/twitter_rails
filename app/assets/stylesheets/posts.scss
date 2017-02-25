@@ -52,12 +52,12 @@
 
 .posts-show-item .post-user-name a {
   vertical-align: middle;
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-left: 15px;
 }
 
 .posts-show-item p {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 300;
   margin: 20px 0;
 }
@@ -76,7 +76,7 @@
   padding: 0;
   background-color: white;
   color: #8899a6;
-  font-size: 1rem;
+  font-size: 16px;
   margin-bottom: 0;
   outline-width: 0;
 }
@@ -98,7 +98,7 @@
 
 /* 新規投稿 & 編集 */
 .posts-new textarea {
-  font-size: 2rem;
+  font-size: 32px;
   border: transparent;
   border-bottom: 1px solid  rgba(216, 218, 223, 0.6);
   resize: none;
@@ -106,6 +106,6 @@
 }
 
 .posts-new textarea::-webkit-input-placeholder {
-   font-size: 1.5rem;
+   font-size: 24px;
    opacity: 0.5;
 }
