@@ -37,8 +37,8 @@ header {
 }
 
 .header-logo img {
-  margin-top: 17px;
-  width: 30px;
+  margin-top: 22px;
+  width: 125px;
 }
 
 .header-menus {
@@ -96,15 +96,14 @@ header {
 
 .signup-btn {
   display: block;
-  margin: 40px auto 10px;
+  margin: 40px auto 15px;
   background-color: #3ecdc6;
 }
 
 .login-btn {
   display: block;
   margin: 0 auto;
-  color: #2b2b2d;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .post-btn {
