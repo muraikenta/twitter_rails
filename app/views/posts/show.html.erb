@@ -1,5 +1,4 @@
-
-<div class="posts-show">
+<div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
@@ -11,19 +10,19 @@
       <% if @current_user && Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
         <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
           <span class="fa fa-heart like-btn-unlike">
-            <%= @post.likes.count %>
+            <%= @likes_count %>
           </span>
         <% end %>
       <% else %>
         <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
           <span class="fa fa-heart like-btn">
-            <%= @post.likes.count %>
+            <%= @likes_count %>
           </span>
         <% end %>
       <% end %>
       <div class="post-menus">
         <% if @user.id == @current_user.id %>
-          <%= link_to("編集", "/posts/#{@post.id}/destroy") %>
+          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
           <%= form_tag("/posts/#{@post.id}/destroy") do %>
             <input type="submit" value="削除">
           <% end %>
@@ -31,5 +30,4 @@
       </div>
     </div>
   </div>
-
 </div>

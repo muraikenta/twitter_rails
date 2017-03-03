@@ -5,12 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @posts = @user.posts
+    @posts = Post.where(user_id: @user.id)
   end
 
   def likes
     @user = User.find_by(id: params[:id])
-    @likes = @user.likes
+    @likes = Like.where(user_id: @user.id)
   end
 
   def new
