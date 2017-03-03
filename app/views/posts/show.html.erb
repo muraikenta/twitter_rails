@@ -1,33 +1,37 @@
-<div class="posts-show">
-  <div class="posts-show-item">
-    <div class="post-user-name">
-      <img src="<%= @user.image %>">
-      <a href="/users/<%= @user.id %>">
-        <%= @user.name %>
-      </a>
-    </div>
-    <p><%= @post.content %><p>
-    <div class="post-time"><%= @post.created_at %></div>
-    <% if @current_user %>
-      <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-        <%= link_to "/likes/#{@post.id}/destroy", method: 'post' do %>
-          <span class="fa fa-heart like-btn-unlike"></span>
-          <span class="like-btn like-btn-unlike">いいね!済み <%= @likes_count %></span>
-        <% end %>
-      <% else %>
-        <%= link_to "/likes/#{@post.id}/create", method: 'post' do %>
-          <span class="fa fa-heart like-btn"></span>
-          <span class="like-btn">いいね! <%= @likes_count %></span>
+
+<main class="posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+        <img src="<%= @user.image %>">
+        <a href="/users/<%= @user.id %>">
+          <%= @user.name %>
+        </a>
+      </div>
+      <p><%= @post.content %></p>
+      <div class="post-time"><%= @post.created_at %></div>
+      <% if @current_user %>
+        <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= form_tag "/posts/#{@post.id}/destroy_like" do %>
+            <span class="fa fa-heart like-btn-unlike"></span>
+            <input type="submit" value="いいね！済み (<%= @post.likes.count %>)" class="like-btn like-btn-unlike">
+          <% end %>
+        <% else %>
+          <%= form_tag "/posts/#{@post.id}/create_like" do %>
+            <span class="fa fa-heart like-btn"></span>
+            <input type="submit" value="いいね！(<%= @post.likes.count %>)" class="like-btn">
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-    <div class="post-menus">
-      <% if @current_user %>
+      <div class="post-menus">
         <% if @user.id == @current_user.id %>
           <a href="/posts/<%= @post.id %>/edit">編集</a>
-          <%= link_to '削除', "/posts/#{@post.id}/destroy", method: 'post' %>
+          <%= form_tag "/posts/#{@post.id}/destroy" do %>
+            <input type="submit" value="削除">
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
+
+</main>

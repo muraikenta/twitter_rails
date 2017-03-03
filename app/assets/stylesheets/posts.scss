@@ -1,31 +1,23 @@
 /* posts/index ================================ */
-.posts-index {
-  max-width: 600px;
-  margin: 30px auto;
-  border: 1px solid #e1e8ed;
-}
-
 .posts-index-item {
-  padding: 15px;
+  padding: 20px 30px;
   background-color: white;
-  border-bottom: 1px solid #e1e8ed;
   overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
 }
 
 .post-left img {
   width: 50px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
 }
 
-.post-user-name {
-  font-weight: bold;
+.posts-index-item a:hover {
+  color: #3ecdc6;
 }
 
-.posts-index-item:last-child {
-  border-bottom: none;
-}
-
-.posts-index-item p {
-  margin: 0 10px;
+.post-user-name a {
+  font-weight: 600;
 }
 
 .post-left {
@@ -36,101 +28,84 @@
 .post-right {
   float: left;
   width: 90%;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-  .posts-index {
-    padding: 0;
-  }
+  padding-left: 25px;
+  text-align: left;
 }
 
 /* posts/show ================================ */
-.posts-show {
-  width: 600px;
-  margin: 30px auto;
-  border: 1px solid #e1e8ed;
+.posts-show form {
+  display: inline;
 }
 
 .posts-show-item {
   padding: 30px;
   background-color: white;
-  overflow: hidden;
-}
-
-.posts-show-item p {
-  font-size: 1.5em;
+  box-shadow: 0 2px 6px #c1ced7;
 }
 
 .posts-show-item img {
   width: 60px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
   vertical-align: middle;
 }
 
 .posts-show-item .post-user-name a {
-  color: #364a4d;
-  text-decoration: none;
   vertical-align: middle;
-  font-size: 1.3em;
-  margin-left: 10px;
+  font-size: 24px;
+  margin-left: 15px;
 }
 
-.posts-show-item .post-time {
+.posts-show-item p {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.post-time {
   color: #8899a6;
   margin-bottom: 10px;
 }
 
-.posts-show-item a {
-  color: #8899a6;
-  text-decoration: underline;
-}
-
-.posts-show form {
-  display: inline;
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
 }
 
 .like-btn {
   padding: 0;
   background-color: white;
   color: #8899a6;
-  font-size: 1em;
+  font-size: 16px;
   margin-bottom: 0;
   outline-width: 0;
 }
 
 .like-btn-unlike {
-  color: #bb428f;
-}
-
-.posts-show-item .fa {
-  margin: 0;
+  color: #ff2581;
 }
 
 .post-menus {
-  margin-top: 10px;
+  float: right;
 }
 
-.post-menus input {
-  padding: 0;
-  background-color: white;
+/* 編集 & 削除リンク */
+.post-menus a, .post-menus input {
   color: #8899a6;
   text-decoration: underline;
-  font-size: 1em;
-  margin-bottom: 0;
-  outline-width: 0;
+  font-size: 14px;
 }
 
-@media (max-width: 700px) {
-  .post-show {
-    width: 100%;
-    padding: 0;
-  }
+/* 新規投稿 & 編集 */
+.posts-new textarea {
+  font-size: 32px;
+  border: transparent;
+  border-bottom: 1px solid  rgba(216, 218, 223, 0.6);
+  resize: none;
+  outline: none;
 }
 
-/* posts/show ================================ */
-.posts-new {
-  padding: 50px;
-  background: rgba(194, 203, 208, 0.26);
-  height: 100%;
+.posts-new textarea::-webkit-input-placeholder {
+   font-size: 24px;
+   opacity: 0.5;
 }
