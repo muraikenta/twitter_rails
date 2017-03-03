@@ -1,4 +1,4 @@
-<main class="users-new">
+<div class="users-new">
   <div class="container">
     <div class="form-heading">新規ユーザー登録</div>
     <div class="form users-form">
@@ -9,7 +9,7 @@
           </div>
         <% end %>
 
-        <%= form_tag '/users/create' do %>
+        <%= form_tag("/users/create") do %>
           <p>ユーザー名</p>
           <input name="title" value="<%= @user.name %>">
           <p>メールアドレス</p>
@@ -22,4 +22,4 @@
     </div>
   </div>
 
-</main>
+</div>

@@ -1,32 +1,30 @@
 
-<main class="posts-show">
+<div class="posts-show">
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
         <img src="<%= @user.image %>">
-        <a href="/users/<%= @user.id %>">
-          <%= @user.name %>
-        </a>
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
       <p><%= @post.content %></p>
       <div class="post-time"><%= @post.created_at %></div>
-      <% if @current_user %>
-        <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-          <%= form_tag "/posts/#{@post.id}/destroy_like" do %>
-            <span class="fa fa-heart like-btn-unlike"></span>
-            <input type="submit" value="いいね！済み (<%= @post.likes.count %>)" class="like-btn like-btn-unlike">
-          <% end %>
-        <% else %>
-          <%= form_tag "/posts/#{@post.id}/create_like" do %>
-            <span class="fa fa-heart like-btn"></span>
-            <input type="submit" value="いいね！(<%= @post.likes.count %>)" class="like-btn">
-          <% end %>
+      <% if @current_user && Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike">
+            <%= @post.likes.count %>
+          </span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn">
+            <%= @post.likes.count %>
+          </span>
         <% end %>
       <% end %>
       <div class="post-menus">
         <% if @user.id == @current_user.id %>
-          <a href="/posts/<%= @post.id %>/edit">編集</a>
-          <%= form_tag "/posts/#{@post.id}/destroy" do %>
+          <%= link_to("編集", "/posts/#{@post.id}/destroy") %>
+          <%= form_tag("/posts/#{@post.id}/destroy") do %>
             <input type="submit" value="削除">
           <% end %>
         <% end %>
@@ -34,4 +32,4 @@
     </div>
   </div>
 
-</main>
+</div>

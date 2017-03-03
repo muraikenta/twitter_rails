@@ -36,9 +36,10 @@ header {
   padding-left: 20px;
 }
 
-.header-logo img {
-  margin-top: 22px;
-  width: 125px;
+.header-logo a {
+  color: white;
+  font-size: 22px;
+  line-height: 64px;
 }
 
 .header-menus {

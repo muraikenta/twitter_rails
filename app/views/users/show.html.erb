@@ -1,19 +1,19 @@
-<main class="user-show">
+<div class="user-show">
   <div class="container">
     <div class="user">
       <img src="<%= @user.image %>">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-        <a href="/users/<%= @current_user.id %>/edit">プロフィールの編集 </a>
+        <%= link_to("プロフィールの編集", "/users/#{@current_user.id}/edit") %>
         <span>|</span>
-        <a href="/users/<%= @current_user.id %>/edit_password">パスワードの変更</a>
+        <%= link_to("パスワードの変更", "/users/#{@current_user.id}/edit_password") %>
       <% end %>
     </div>
 
     <ul class="user-tabs">
-      <li class="active"><a href="/users/<%= @user.id %>">投稿</a></li>
-      <li><a href="/users/<%= @user.id %>/likes">いいね！</a></li>
+      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
 
     <% @posts.each do |post| %>
@@ -22,16 +22,12 @@
         <div class="post-left"><img src="<%= user.image %>"></div>
         <div class="post-right">
           <div class="post-user-name">
-            <a href="/users/<%= user.id %>">
-              <%= user.name %>
-            </a>
+            <%= link_to(user.name, "/users/#{user.id}") %>
           </div>
-          <a href="/posts/<%= post.id %>">
-            <%= post.content %>
-          </a>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
         </div>
       </div>
     <% end %>
   </div>
 
-</main>
+</div>

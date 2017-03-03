@@ -1,4 +1,4 @@
-<main class="users-new">
+<div class="users-new">
   <div class="container">
     <div class="form-heading">ログイン</div>
     <div class="form users-form">
@@ -9,7 +9,7 @@
           </div>
         <% end %>
 
-        <%= form_tag '/login' do %>
+        <%= form_tag("/login") do %>
           <p>メールアドレス</p>
           <input name="email" value="<%= @email %>">
           <p>パスワード</p>
@@ -19,4 +19,4 @@
       </div>
     </div>
   </div>
-</main>
+</div>

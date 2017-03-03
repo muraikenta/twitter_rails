@@ -1,4 +1,4 @@
-<main class="posts-index">
+<div class="posts-index">
   <div class="container">
     <% @posts.each do |post| %>
       <% user = post.user %>
@@ -8,15 +8,11 @@
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <a href="/users/<%= user.id %>">
-              <%= user.name %>
-            </a>
+            <%= link_to(user.name, "/users/#{user.id}") %>
           </div>
-          <a href="/posts/<%= post.id %>">
-            <%= post.content %>
-          </a>
+          <%= link_to(post.content, "/posts/post.id") %>
         </div>
       </div>
     <% end %>
   </div>
-</main>
+</div>

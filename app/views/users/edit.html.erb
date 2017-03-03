@@ -1,4 +1,4 @@
-<main class="users-edit">
+<div class="users-edit">
   <div class="container">
     <div class="form-heading">アカウント編集</div>
     <div class="form users-form">
@@ -9,7 +9,7 @@
           </div>
         <% end %>
 
-        <%= form_tag "/users/#{@current_user.id}/update", multipart: true do %>
+        <%= form_tag("/users/#{@current_user.id}/update", {multipart: true}) do %>
           <p>名前</p>
           <input name="name" value="<%= @current_user.name %>">
           <p>画像</p>
@@ -21,5 +21,4 @@
       </div>
     </div>
   </div>
-
-</main>
+</div>
