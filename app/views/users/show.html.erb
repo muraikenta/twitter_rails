@@ -6,8 +6,6 @@
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
         <%= link_to("プロフィールの編集", "/users/#{@current_user.id}/edit") %>
-        <span>|</span>
-        <%= link_to("パスワードの変更", "/users/#{@current_user.id}/edit_password") %>
       <% end %>
     </div>
 

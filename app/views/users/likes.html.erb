@@ -6,8 +6,6 @@
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
         <a href="/users/<%= @current_user.id %>/edit">プロフィールの編集 </a>
-        <span>|</span>
-        <a href="/users/<%= @current_user.id %>/edit_password">パスワードの変更</a>
       <% end %>
     </div>
 
