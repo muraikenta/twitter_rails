@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   post 'posts/:id/update' => 'posts#update'
   post 'posts/:id/destroy' => 'posts#destroy'
 
-  post '/posts/:post_id/create_like' => 'likes#create'
-  post '/posts/:post_id/destroy_like' => 'likes#destroy'
+  post '/likes/:post_id/create' => 'likes#create'
+  post '/likes/:post_id/destroy' => 'likes#destroy'
 end
