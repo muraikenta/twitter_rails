@@ -15,4 +15,4 @@
 .byebug_history
 
 public/user_images/*
-!public/user_images/.gitkeep
+!public/user_images/.keep
