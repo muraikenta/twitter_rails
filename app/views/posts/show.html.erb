@@ -9,17 +9,17 @@
       <div class="post-time"><%= @post.created_at %></div>
       <% if @current_user && Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
         <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-          <div class="like-btn-unlike">
+          <span class="like-btn-unlike">
             <span class="fa fa-heart "></span>
             <%= @likes_count %>
-          </div>
+          </span>
         <% end %>
       <% else %>
         <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
-          <div class="like-btn">
+          <span class="like-btn">
             <span class="fa fa-heart like-btn"></span>
             <%= @likes_count %>
-          </div>
+          </span>
         <% end %>
       <% end %>
       <div class="post-menus">
